@@ -7,7 +7,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 async function startServer() {
   const app = express();
-  const PORT = 3000;
+  const PORT = Number(process.env.PORT) || 3000;
 
   app.use(express.json());
 
@@ -25,7 +25,7 @@ async function startServer() {
       const commonHeaders = {
         "Content-Type": "application/json",
         "Accept": "application/json, text/event-stream, */*",
-        "User-Agent": "MCP-Inspector/1.0",
+        "User-Agent": "MCP-Tool-Explorer/1.0",
         ...customHeaders
       };
 
@@ -41,7 +41,7 @@ async function startServer() {
           params: {
             protocolVersion: "2024-11-05",
             capabilities: {},
-            clientInfo: { name: "MCP-Inspector", version: "1.0.0" }
+            clientInfo: { name: "MCP Tool Explorer", version: "1.0.0" }
           },
         }),
       });
@@ -89,7 +89,7 @@ async function startServer() {
         return res.status(toolsResponse.status).json({ error: `List tools failed (${toolsResponse.status})`, details: text });
       }
 
-      // Handle SSE-style output (Magento server style)
+      // Handle servers that reply with an SSE-formatted body
       // Check for 'data: ' prefix even if 'event: ' isn't at the very start
       if (text.includes("data: ")) {
         const lines = text.split(/\r?\n/);

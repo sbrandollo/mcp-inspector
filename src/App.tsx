@@ -140,10 +140,10 @@ export default function App() {
           <div className="w-8 h-8 bg-black rounded flex items-center justify-center">
             <div className="w-4 h-4 border-2 border-white rotate-45"></div>
           </div>
-          <h1 className="text-2xl font-semibold tracking-tight">MCP Inspector</h1>
+          <h1 className="text-2xl font-semibold tracking-tight">MCP Tool Explorer</h1>
         </div>
         <p className="text-zinc-500 text-lg max-w-xl">
-          Enter a Model Context Protocol server URL to discover and test exposed tools instantly.
+          Enter a Model Context Protocol server URL to discover the tools it exposes.
         </p>
       </header>
 
@@ -348,9 +348,6 @@ export default function App() {
                        <span className="text-[10px] px-2 py-0.5 bg-zinc-50 border border-zinc-100 text-zinc-400 rounded-full">
                         params: {tool.inputSchema?.properties ? Object.keys(tool.inputSchema.properties).length : 0}
                       </span>
-                      <span className="text-[10px] px-2 py-0.5 bg-zinc-50 border border-zinc-100 text-zinc-400 rounded-full">
-                        auth: none
-                      </span>
                     </div>
 
                     <div className="mt-4 pt-4 border-t border-zinc-50 hidden group-hover:block overflow-hidden transition-all">
@@ -374,9 +371,9 @@ export default function App() {
 
       <footer className="pt-8 mt-auto border-t border-zinc-100">
         <div className="flex justify-between items-center">
-          <span className="text-xs text-zinc-400 font-mono tracking-tighter uppercase">Ready for MCP SPEC V1.2.0</span>
+          <span className="text-xs text-zinc-400 font-mono tracking-tighter uppercase">MCP protocol 2024-11-05</span>
           <nav className="flex gap-6 text-xs text-zinc-400 font-medium uppercase tracking-widest">
-            <a href="#" className="hover:text-black transition-colors">GitHub</a>
+            <a href="https://github.com/sbrandollo/mcp-inspector" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors">GitHub</a>
           </nav>
         </div>
       </footer>
