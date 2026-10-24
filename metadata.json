@@ -1,0 +1,6 @@
+{
+  "name": "MCP Tool Explorer",
+  "description": "A developer tool to inspect and list capabilities of Model Context Protocol (MCP) servers via HTTP.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
